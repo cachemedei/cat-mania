@@ -1,0 +1,21 @@
+---
+import BaseLayout from './BaseLayout.astro';
+const { frontmatter } = Astro.props;
+
+---
+
+<BaseLayout>
+  <article class="p-2 space-y-4 mb-8 grid grid-cols-1">
+    <h1 class="text-center text-2xl">{frontmatter.title}</h1>
+    <p class="text-center text-xl">Owner - {frontmatter.author}</p>
+    <p class="w-11/12 mx-auto md:w-4/5 md:text-lg lg:w-3/5">
+      {frontmatter.description}
+    </p>
+    <img
+      class="w-[400px] rounded mx-auto row-start-3"
+      src={frontmatter.blogImg.url}
+      alt={frontmatter.blogImg.alt}
+    />
+    <slot />
+  </article>
+</BaseLayout>

@@ -1,0 +1,18 @@
+---
+import BlogCard from "../BlogCard.astro";
+
+const allPosts = Object.values(
+  import.meta.glob('../../pages/posts/*.md', { eager: true }),
+);
+const recentPosts = allPosts.slice(allPosts.length - 4, -1);
+---
+
+<article
+  class="hidden lg:block w-fit rounded py-4 px-8 space-y-4 absolute right-0 top-0"
+>
+  {
+    recentPosts.map((post: any) => (
+      <BlogCard url={post.url} post={post.frontmatter} />
+    ))
+  }
+</article>

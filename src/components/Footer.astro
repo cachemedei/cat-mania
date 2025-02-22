@@ -1,0 +1,29 @@
+---
+const socials = [
+  {
+    platform: "GitHub",
+    link: "https://github.com/cachemedei",
+    icon: "/icons/github.svg",
+    alt: "A thin black circle with an outline silhouette of a cat inside",
+  },
+  {
+    platform: "LinkedIn",
+    link: "https://www.linkedin.com/in/caitlin-achemedei-4616762b3/",
+    icon: "/icons/linkedin.svg",
+    alt: "A thin black square with the letters in inside",
+  },
+];
+---
+
+<footer class="mt-auto">
+  <ul class="flex w-64 mx-auto justify-between">
+    {
+      socials.map((social) => (
+        <li>
+          <img class="w-12" src={social.icon} alt={social.alt} />
+          <a href={social.link}>{social.platform}</a>
+        </li>
+      ))
+    }
+  </ul>
+</footer>

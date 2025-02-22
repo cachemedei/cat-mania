@@ -1,16 +1,24 @@
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>CatMania</title>
-	</head>
-	<body>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/blog">Blog</a>
-        
-		<h1>Cats Blog</h1>
-	</body>
-</html>
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BlogCard from '../components/BlogCard.astro';
+import SearchBar from '../components/SearchBar.astro';
+
+const allPosts = Object.values(
+  import.meta.glob('./posts/*.md', { eager: true }),
+);
+const pageTitle = 'maniaBlog';
+---
+
+<BaseLayout>
+  <SearchBar />
+  <ul class="grid lg:grid-cols-2 xl:grid-cols-3 space-x-4 w-fit mx-auto mt-8">
+    {
+      allPosts.map((post: any) => (
+        <BlogCard
+          url={post.url}
+          post={post.frontmatter}
+        />
+      ))
+    }
+  </ul>
+</BaseLayout>

@@ -1,0 +1,11 @@
+---
+import CatHaven from '../components/sidebars/CatHaven.astro';
+import PageLayout from '../layouts/PageLayout.astro';
+import AdoptionFacts from '../components/sidebars/AdoptionFacts.astro';
+const pageTitle = 'Adopting a Cat';
+---
+
+<PageLayout pageTitle={pageTitle}>
+  <AdoptionFacts />
+  <CatHaven />
+</PageLayout>

@@ -1,0 +1,16 @@
+---
+import Nav from './Nav.astro';
+
+const currentPage = Astro.url.pathname;
+---
+
+<header class="w-full flex justify-between items-center bg-orange-500/20 fixed z-100">
+  <a href="/">
+    <img
+      class="w-24 m-2"
+      src="/icons/logo.png"
+      alt="light purple line drawing of a cat sitting"
+    />
+  </a>
+  <Nav />
+</header>

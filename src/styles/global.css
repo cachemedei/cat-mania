@@ -1,0 +1,15 @@
+/* Shadows Into Light Two */
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap');
+
+/* Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@import 'tailwindcss';
+
+h1, a {
+    font-family: 'Shadows into light two';
+}
+
+p {
+    font-family: 'inter';
+}
