@@ -1,0 +1,11 @@
+---
+import Desktop from './nav/Desktop.astro';
+import Mobile from './nav/Mobile.astro';
+
+const currentPage = Astro.url.pathname;
+---
+
+<Desktop currentPage={currentPage} />
+<Mobile currentPage={currentPage} />
+
+<!-- text-xl flex justify-evenly items-center w-[450px] tracking-widest h-fit -->

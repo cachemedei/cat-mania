@@ -1,0 +1,29 @@
+---
+const { url, post } = Astro.props;
+
+function truncateString(str: string, num: number) {
+  if (str?.length > num) {
+    return str.slice(0, num) + `...`;
+  } else return str;
+}
+
+const shortDescription = truncateString(post.description, 200);
+---
+
+<a href={url}>
+  <article class="w-[350px] md:w-[450px] mx-auto space-y-4 flex flex-col items-center">
+    <img
+      class="rounded-lg h-[220px] w-full object-cover shadow-gray-600 shadow-lg"
+      src={post.cardImg.url}
+      alt={post.alt}
+    />
+    <h1 class="text-2xl tracking-widest">{post.title}</h1>
+    <p class="p-2">{shortDescription}</p>
+    <div class="flex space-x-4">
+      {post.tags.map((tag: string) => (
+        <p class="border px-1 rounded font-light">{tag}</p>
+      ))}
+    </div>
+    <p>{post.date}</p>
+  </article>
+</a>

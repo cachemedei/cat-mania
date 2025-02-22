@@ -1,0 +1,57 @@
+---
+import { Astronav, MenuItems, MenuIcon } from 'astro-navbar';
+const { currentPage } = Astro.props;
+---
+
+<div class="md:hidden relative">
+  <Astronav>
+    <div class="flex justify-between">
+      <MenuIcon class="size-10 m-4" />
+    </div>
+    <MenuItems class="hidden absolute right-0 top-[92px] size-72 bg-orange-300">
+      <div
+        class="h-full flex flex-col justify-evenly items-center text-3xl"
+      >
+        <!-- Home -->
+        <a href="/" class="group flex flex-col h-11 w-20">
+          <span>Home</span>
+          {
+            currentPage === '/' && (
+              <img src="/icons/paw.png" alt="Active" class="w-16 ml-3 -mt-3" />
+            )
+          }
+        </a>
+
+        <!-- Adoption -->
+        <a href="/adoption" class="group flex flex-col h-11 w-28">
+          <span>Adoption</span>
+          {
+            currentPage === '/adoption' && (
+              <img src="/icons/paw.png" alt="Active" class="w-16 ml-11 -mt-3" />
+            )
+          }
+        </a>
+
+        <!-- Blog -->
+        <a href="/blog" class="group flex flex-col h-11 w-20">
+          <span>Blog</span>
+          {
+            currentPage === '/blog' && (
+              <img src="/icons/paw.png" alt="Active" class="w-16 ml-2 -mt-3" />
+            )
+          }
+        </a>
+
+        <!-- About -->
+        <a href="/about" class="group flex flex-col h-11 w-20">
+          <span>About</span>
+          {
+            currentPage === '/about' && (
+              <img src="/icons/paw.png" alt="Active" class="w-16 ml-4 -mt-3" />
+            )
+          }
+        </a>
+      </div>
+    </MenuItems>
+  </Astronav>
+</div>
